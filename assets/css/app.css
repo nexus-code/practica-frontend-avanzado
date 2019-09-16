@@ -1,0 +1,286 @@
+
+/*
+1. Definitions;
+2. HTML basics
+3. styles
+4. movies
+5. footer
+
+theme colors: https://coolors.co/114b5f-456990-e4fde1-f45b69-6b2737
+*/
+
+:root {
+  --font-size: 14px;
+  --primary-color:  #394648;
+  --secondary-color: #456990;
+  --highlight-color: #F45B69;
+  --highlight-color-hover: #6B2737;
+  --bg-color: #fff;
+  --max-width: 1140px;
+}
+
+/* 2. HTML basics*/
+
+clearfix::after {content: ""; clear: both;display: block;}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  font-family: 'Raleway', sans-serif;
+  font-size: calc(var(--font-size)*1.1);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h1, h2, h3{
+  font-family: 'Barlow';
+  text-align: center;
+  line-height: 100%;
+}
+
+h1 {
+  font-size: calc(var(--font-size)*2.8);
+  font-weight: 800;
+}
+
+h1 span {
+  color: var(--highlight-color);
+  display: block;
+  font-size: calc(var(--font-size)*1.2);
+  margin-top: -14px;
+}
+
+h2 {
+  background-color: var(--secondary-color);
+  color: var(--bg-color);
+  font-size: calc(var(--font-size)*1.25);
+  padding: 1rem; 
+  vertical-align: middle;
+}
+
+h3 {
+  color: var(--secondary-color);
+  font-size: calc(var(--font-size)*1.25);
+  font-weight: 800;
+  padding: 1rem; 
+}
+
+@media (min-width: 750px) {
+  h1 { font-size: calc(var(--font-size)*6); }
+  h1 span { font-size: calc(var(--font-size)*2); }
+  h2, h3  { font-size: calc(var(--font-size)*2.5); }
+}
+
+@media (max-width: 970px) {
+
+  hr {display: none;}
+}
+
+
+a {
+  color: var(--highlight-color);
+  font-family: 'Barlow';
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--highlight-hover-color);
+}
+
+header, main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
+main {
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+
+@media (max-width: 640px) {
+
+  p { padding: 0 1rem;}
+}
+
+/* 3 My styles */
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.main-movie section {
+  margin-bottom: 4vh;
+}
+
+.pt-10 {
+  padding-top: 10vh;
+}
+.div-presentation{
+  text-align: center;
+}
+
+.div-presentation img{
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap ;
+}
+
+@media (min-width: 640px) {
+  .container {
+    align-items: stretch;
+    align-self:  center;
+    flex-direction: row;    
+  }
+
+  .container-color {
+    background-color: var(--secondary-color);
+  }
+
+  .container div {
+    flex: 0.5;
+    padding: 1.5rem;
+  }
+}
+
+.a-right {
+  text-align: right;
+  padding-right: .5rem
+}
+
+ul li {
+  display:inline;
+}
+
+ul#social-list li {
+  font-size: calc(var(--font-size)*1.75);
+  padding-right: 1rem;
+}
+
+ul#breadcrumbs {
+  text-align: right;
+  padding: .75rem
+}
+
+ul#breadcrumbs li+li:before {
+  content: "/\00a0";
+}
+
+ul#breadcrumbs li:last-child {
+  font-weight: 600;
+}
+
+/* 4. movies */
+
+.poster {
+  text-align: center;
+}
+
+.poster img {
+    box-shadow: 10px 10px 5px 0px rgba(50, 50, 50, 1);
+    border: 2px solid var(--bg-color);
+}
+
+@media (min-width: 640px) {
+  .poster {
+    margin: 24px 0;
+  }
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+table {
+  color: #000;
+}
+
+table tr th {
+  font-weight: bold;
+  text-align: left;
+}
+
+/* animations */
+.animate-left {
+    position: relative;
+    animation: animateleft 1.4s
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+.animate-right {
+    animation: animateright 1.4s;
+    position: relative;
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+        opacity: 0
+    }
+
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+/* 5. footer */
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  margin-top: 1.5rem;
+}
+
+footer section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+@media (min-width: 640px) {
+   footer section {
+    flex-direction: row;
+  }
+}
+
+footer section div {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+footer p:last-child {
+  text-align: center;
+  color: yellow;
+  margin: 1rem 0;
+}

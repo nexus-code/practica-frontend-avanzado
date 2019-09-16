@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es_ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site para práctica 5. Frontend avanzado" />
+    <meta author="Miguel Ángel Cárdenas | Nexus Code">
+    <title>BeerFlix - a beer moments tribute</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/movies-grid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
+        integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo animate-left hide">
+            <a href="movies.html" title="Ir a home">BeerFlix <i class="fa fa-beer" aria-hidden="true"></i><i class="fa fa-beer" aria-hidden="true"></i><span>a beer moments tribute</span></a>
+        </div>
+        <input type="checkbox" id="burger-checkbox">
+        <label for="burger-checkbox" class="burger-label"></label>
+        <ul class="navbar-list">
+            <li class="navbar-item"><a href="movies.html" class="active"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+            <li class="navbar-item"><a href="#"><i class="fa fa-beer" aria-hidden="true"></i> Cervezas</a></li>
+            <li class="navbar-item"><a href="#"><i class="fa fa-exclamation" aria-hidden="true"></i></i> Novedades</a></li>
+            <li class="navbar-item"><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> Mi selección</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1 class="pt-10 animate-right">BeerFlix<span>~ a beer moments tribute ~</span></h1>
+    </header>
+    <main>
+        <section class="div-presentation">
+            <picture>
+                <source srcset="assets/images/cheers-beers_320.jpg" media="(max-width: 320px)">
+                <source srcset="assets/images/cheers-beers_420.jpg" media="(max-width: 420px)">
+                <source srcset="assets/images/cheers-beers_768.jpg" media="(max-width: 768px)">
+                <source srcset="assets/images/cheers-beers_992.jpg" media="(max-width: 992px)">
+                <img src="assets/images/cheers-beers_1920.jpg" alt="BeerFlix - A little beer moments tribute. For Dev Purposes Only">
+            </picture>             
+        </section>
+        <section id="access" class="container container-color">
+            <div>
+                <h2>Cada cerveza tiene su momento</h2>
+            </div>
+        </section>        
+    </main>
+
+    <footer>
+        <section>
+            <div>
+                <h4><i class="fa fa-share-alt" aria-hidden="true"></i> Más información:</h4>                
+                <ul id="social-list">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                </ul>
+                <br>
+                <h4><i class="fa fa-envelope-open-o" aria-hidden="true"></i> Contacto:</h4>
+                <p><a href="mailto:noreply@ghiblichannel.dev"> noreply@beerflix.dev</a></p>
+                <br>
+                <h4><i class="fa fa-info" aria-hidden="true"></i>nformación legal:</h4>
+                <p><a href="#">Aviso legal</a>&nbsp;|&nbsp;<a href="#">Política de privacidad</a>&nbsp;|&nbsp;<a href="#">Política de cookies</a></p>
+                <p></p>
+            </div>
+            <div>
+                <p class="text-centered">BeerFlix recomienda el consumo responsable y ameno de cerveza y demás bebidas espirituosas. </p>
+                <br>
+                <hr>
+                <p>Site developed for learning. 2019</p>
+            </div>            
+        </section>
+    </footer>
+
+    <!-- <script type="module" src="assets/js/main.js" crossorigin="anonymous"></script> -->
+
+</body>
+</html>
