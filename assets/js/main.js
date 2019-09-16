@@ -1,13 +1,16 @@
+'use strict';
 
-window.onscroll = function () {
-	console.log(document.body.scrollTop);
+// show or hide navbar logo when appSubTitle hides or shows on scrolling (10px margin)
+window.addEventListener('scroll', function () {
 
-	if (document.body.scrollTop > 200 ) {
-		// document.getElementById("myImg").className = "slideUp";
-		console.log(document.body.scrollTop);
-	}    
-};
+	const logo = document.getElementById('logo');
+	const appSubTitle = document.querySelector('#appSubTitle');
+	var appSubTitlePos = appSubTitle.getBoundingClientRect();
+	console.log('appSubTitlePos.top', appSubTitlePos.top );
 
-// window.addEventListener('scroll', function () {
-//     console.log('scrolling');
-// });
+	if (appSubTitlePos.top < 10) {
+		logo.style.display = 'block';
+	} else {
+		logo.style.display = 'none';
+	}
+});

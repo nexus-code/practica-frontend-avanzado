@@ -8,7 +8,7 @@
 The solution consists of the API detailed below, and a small view with simple filtering methods example
 
 ## REQUIREMENTS
-* Install express
+* Install express, ESLint & husky
 
 
 ## IMAGES CREDITS
