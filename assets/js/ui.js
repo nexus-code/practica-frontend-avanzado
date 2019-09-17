@@ -4,7 +4,7 @@ const loader = document.querySelector('#loader');
 const detailSection = document.querySelector('#detailSection');
 
 export const showQuotesForm = () =>
-    detailSection.innerHTML = `
+	detailSection.innerHTML = `
     <div id="detail" class="detail-content"></div>
     <div class="quotes-list">
       <h2>Quotes</h2>
@@ -20,15 +20,15 @@ export const showQuotesForm = () =>
     </form>
   `;
 export const hideQuotesForm = () =>
-    detailSection.innerHTML = '';
+	detailSection.innerHTML = '';
 
 export const toggle = elemento => (removeClass, addClass) => {
-    elemento.classList.remove(removeClass);
-    elemento.classList.add(addClass);
+	elemento.classList.remove(removeClass);
+	elemento.classList.add(addClass);
 };
 
 export const toggleClass = (elemento, toggleClass) => {
-    elemento.classList.toggle(toggleClass);
+	elemento.classList.toggle(toggleClass);
 };
 
 export const renderLoader = toggle(loader);

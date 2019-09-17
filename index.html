@@ -9,12 +9,12 @@
     <title>BeerFlix - a beer moments tribute</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/app.css">
     <link rel="stylesheet" type="text/css" href="assets/css/nav.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/movies-grid.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
-        integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/cards.css"> -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 
@@ -35,21 +35,21 @@
     <header>
         <h1 class="pt-10 animate-right">BeerFlix<span id="appSubTitle">~ a beer moments tribute ~</span></h1>
     </header>
+    <section class="div-presentation">
+        <picture>
+            <source srcset="assets/images/cheers-beers_320.jpg" media="(max-width: 320px)">
+            <source srcset="assets/images/cheers-beers_420.jpg" media="(max-width: 420px)">
+            <source srcset="assets/images/cheers-beers_768.jpg" media="(max-width: 768px)">
+            <source srcset="assets/images/cheers-beers_992.jpg" media="(max-width: 992px)">
+            <img src="assets/images/cheers-beers_1920.jpg" alt="BeerFlix - A little beer moments tribute. For Dev Purposes Only">
+        </picture>             
+    </section>
+    <section>
+        <div>
+            <p class="text-centered">Cada cerveza tiene su momento. Elige la tuya:</p>
+        </div>
+    </section>        
     <main>
-        <section class="div-presentation">
-            <picture>
-                <source srcset="assets/images/cheers-beers_320.jpg" media="(max-width: 320px)">
-                <source srcset="assets/images/cheers-beers_420.jpg" media="(max-width: 420px)">
-                <source srcset="assets/images/cheers-beers_768.jpg" media="(max-width: 768px)">
-                <source srcset="assets/images/cheers-beers_992.jpg" media="(max-width: 992px)">
-                <img src="assets/images/cheers-beers_1920.jpg" alt="BeerFlix - A little beer moments tribute. For Dev Purposes Only">
-            </picture>             
-        </section>
-        <section id="access" class="container container-color">
-            <div>
-                <h2>Cada cerveza tiene su momento. Elige la tuya:</h2>
-            </div>
-        </section>        
     </main>
     <section id="detailSection" class="detail-section"></section>
     <div id="loader" class="loader-container hide">

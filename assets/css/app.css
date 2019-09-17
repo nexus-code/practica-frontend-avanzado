@@ -1,6 +1,5 @@
-
 /*
-1. Definitions;
+1. definitions;
 2. HTML basics
 3. styles
 4. movies
@@ -110,25 +109,15 @@ main {
 
 /* 3 My styles */
 
-.hide {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
 .text-centered {
   text-align: center;
 }
 
-.main-movie section {
-  margin-bottom: 4vh;
-}
 
 .pt-10 {
   padding-top: 10vh;
 }
+
 .div-presentation{
   text-align: center;
 }
@@ -187,72 +176,6 @@ ul#breadcrumbs li:last-child {
   font-weight: 600;
 }
 
-/* 4. movies */
-
-.poster {
-  text-align: center;
-}
-
-.poster img {
-    box-shadow: 10px 10px 5px 0px rgba(50, 50, 50, 1);
-    border: 2px solid var(--bg-color);
-}
-
-@media (min-width: 640px) {
-  .poster {
-    margin: 24px 0;
-  }
-}
-
-video {
-  width: 100%;
-  height: auto;
-}
-
-table {
-  color: #000;
-}
-
-table tr th {
-  font-weight: bold;
-  text-align: left;
-}
-
-/* animations */
-.animate-left {
-    position: relative;
-    animation: animateleft 1.4s
-}
-
-@keyframes animateleft {
-    from {
-        left: -300px;
-        opacity: 0
-    }
-
-    to {
-        left: 0;
-        opacity: 1
-    }
-}
-
-.animate-right {
-    animation: animateright 1.4s;
-    position: relative;
-}
-
-@keyframes animateright {
-    from {
-        right: -300px;
-        opacity: 0
-    }
-
-    to {
-        right: 0;
-        opacity: 1
-    }
-}
-
 /* 5. footer */
 
 footer {
@@ -283,4 +206,39 @@ footer p:last-child {
   text-align: center;
   color: yellow;
   margin: 1rem 0;
+}
+
+/* animations */
+.animate-left {
+  position: relative;
+  animation: animateleft 1.4s
+}
+
+@keyframes animateleft {
+  from {
+    left: -300px;
+    opacity: 0
+  }
+
+  to {
+    left: 0;
+    opacity: 1
+  }
+}
+
+.animate-right {
+  animation: animateright 1.4s;
+  position: relative;
+}
+
+@keyframes animateright {
+  from {
+    right: -300px;
+    opacity: 0
+  }
+
+  to {
+    right: 0;
+    opacity: 1
+  }
 }

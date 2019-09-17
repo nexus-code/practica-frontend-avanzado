@@ -25,21 +25,22 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 		getBeers: async text => {
             
 			try {
-                const requestUrl = text ? `${searchAPIEndpoint}${text}` : beersAPIEndpoint;
-                console.log(requestUrl);
+				const requestUrl = text ? `${searchAPIEndpoint}${text}` : beersAPIEndpoint;
+				console.log(requestUrl);
 				const response = await fetch(requestUrl, {
-                    'method': 'GET',
-                    'headers': {
-                        'user': 'ma.cardenas@nexuscode.com',
-                        'X-API-KEY': '5B1BJZQ-5QYMSJG-NHK8Z2D-S8YJHDB'
-                    }
-                });
+					'method': 'GET',
+					'headers': {
+						// 'user': 'ma.cardenas@nexuscode.com',
+						'X-API-KEY': '5B1BJZQ-5QYMSJG-NHK8Z2D-S8YJHDB'
+					}
+				});
 				if (!response.ok) {
 					throw new Error('Error fetching beers');
 				}
-                const data = await response.json();
-                
-                console.log(data.beers);
+				const apiData = await response.json();
+				const data = apiData.beers;
+				console.log(data);
+
 				const formatData = data.map(item => {
 					if (item.beer) {
 						return item.beer;
