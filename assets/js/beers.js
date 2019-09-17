@@ -9,10 +9,13 @@ const templateBeer = ({
 	name,
 	image,
 	description,
-	id
+    id,
+    firstBrewed,
+	likes,
+	comments
 }) => `
   <a href="/detail/${id}">
-    <div class="card principal">
+    <div class="card">
       <header class="card-header">
         <h2>${name}</h2>
       </header>
@@ -24,15 +27,9 @@ const templateBeer = ({
           <p>${description}
           </p>
           <div class="rating-container">
-            <button class="icon">
-              <i class="fas fa-star"></i>
-            </button>
-            <button class="icon">
-              <i class="far fa-star"></i>
-            </button>
-            <button class="icon">
-              <i class="far fa-star"></i>
-            </button>
+            <i class="fa fa-calendar-o text-highlight" aria-hidden="true"></i> ${firstBrewed} &nbsp;&nbsp;
+            <i class="fa fa-heart-o text-highlight" aria-hidden="true"></i> ${likes} &nbsp;&nbsp;
+            <i class="fa fa-comment-o text-highlight" aria-hidden="true"></i> ${comments.length} &nbsp;&nbsp;
           </div>
         </div>
       </div>
@@ -42,12 +39,12 @@ const templateBeer = ({
 
 const renderBeers = (element, beers) => {
 	const htmlBeers = beers.slice(0, 10).map((beer, index) => {
-		if (index < 2) {
-			return templateBeer({
-				...beer,
-				principal: true
-			});
-		}
+		// if (index < 2) {
+		// 	return templateBeer({
+		// 		...beer,
+		// 		principal: true
+		// 	});
+		// }
 		return templateBeer({
 			...beer,
 			principal: false
@@ -69,9 +66,7 @@ const renderBeers = (element, beers) => {
 	});
 };
 
-const {
-	getBeers
-} = api();
+const {getBeers} = api();
 
 const renderBeersDOM = async text => {
 	try {
