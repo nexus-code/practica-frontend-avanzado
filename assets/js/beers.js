@@ -5,12 +5,11 @@ import {
 import api from './api.js';
 
 const templateBeer = ({
-	principal,
 	name,
 	image,
 	description,
-    id,
-    firstBrewed,
+	id,
+	firstBrewed,
 	likes,
 	comments
 }) => `
