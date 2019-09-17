@@ -4,16 +4,8 @@ import {
 } from './ui.js';
 import api from './api.js';
 
-const templateBeer = ({
-	name,
-	image,
-	description,
-	id,
-	firstBrewed,
-	likes,
-	comments
-}) => `
-  <a href="/detail/${id}">
+const templateBeer = ({name,image,description,beerId,firstBrewed,likes,comments }) => `
+  <a href="/detail/${beerId}">
     <div class="card">
       <header class="card-header">
         <h2>${name}</h2>
@@ -68,6 +60,9 @@ const renderBeers = (element, beers) => {
 const {getBeers} = api();
 
 const renderBeersDOM = async text => {
+
+    
+
 	try {
 		renderLoader('hide', 'beer');
 		const mainSection = document.querySelector('main');

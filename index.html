@@ -11,29 +11,28 @@
     <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
     integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/nav.css">
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/cards.css"> -->
-    <link rel="icon" type="image/png" href="assets/images/default.png">
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/nav.css">
+    <link rel="icon" type="image/png" href="/assets/images/default.png">
 </head>
 
 <body>
     <nav class="navbar">
         <div id="logo" class="logo animate-left hide">
-            <a href="index.html" title="Ir a home">BeerFlix <i class="fa fa-beer" aria-hidden="true"></i><i class="fa fa-beer" aria-hidden="true"></i><span>a beer moments tribute</span></a>
+            <a href="/" title="Ir a home">BeerFlix <i class="fa fa-beer" aria-hidden="true"></i><i class="fa fa-beer" aria-hidden="true"></i><span>a beer moments tribute</span></a>
         </div>
         <input type="checkbox" id="burger-checkbox">
         <label for="burger-checkbox" class="burger-label"></label>
         <ul class="navbar-list">
-            <li class="navbar-item"><a href="movies.html" class="active"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+            <li class="navbar-item"><a href="/" class="active"><i class="fa fa-home" aria-hidden="true"></i></a></li>
             <li class="navbar-item"><a href="#"><i class="fa fa-beer" aria-hidden="true"></i> Cervezas</a></li>
             <li class="navbar-item"><a href="#"><i class="fa fa-exclamation" aria-hidden="true"></i></i> Novedades</a></li>
             <li class="navbar-item"><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> Mi selección</a></li>
         </ul>
     </nav>
     <header>
-        <h1 class="pt-10 animate-right">BeerFlix<span id="appSubTitle">~ a beer moments tribute ~</span></h1>
+        <h1 class="pt-10 animate-right" id="appTitle">BeerFlix<span id="appSubTitle">~ a beer moments tribute ~</span></h1>
     </header>
     <section class="div-presentation">
         <picture>
@@ -43,8 +42,6 @@
             <source srcset="assets/images/cheers-beers_992.jpg" media="(max-width: 992px)">
             <img src="assets/images/cheers-beers_1920.jpg" alt="BeerFlix - A little beer moments tribute. For Dev Purposes Only">
         </picture>             
-    </section>
-    <section>
         <div>
             <p class="text-centered">Cada cerveza tiene su momento. Elige la tuya:</p>
         </div>
@@ -92,8 +89,9 @@
         </section>
     </footer>
 
-    <script type="module" src="assets/js/main.js" crossorigin="anonymous"></script>
-    <script type="module" src="assets/js/routes.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script type="module" src="/assets/js/main.js" crossorigin="anonymous"></script>
+    <script type="module" src="/assets/js/routes.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

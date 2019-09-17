@@ -30,7 +30,7 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 				const response = await fetch(requestUrl, {
 					'method': 'GET',
 					'headers': {
-						// 'user': 'ma.cardenas@nexuscode.com',
+						'user': 'ma.cardenas@nexuscode.com',
 						'X-API-KEY': '5B1BJZQ-5QYMSJG-NHK8Z2D-S8YJHDB'
 					}
 				});
@@ -55,7 +55,13 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 		},
 		getBeerDetail: async id => {
 			try {
-				const response = await fetch(`${beersAPIEndpoint}/${id}`);
+				const response = await fetch(`${beersAPIEndpoint}/${id}`, {
+					'method': 'GET',
+					'headers': {
+						'user': 'ma.cardenas@nexuscode.com',
+						'X-API-KEY': '5B1BJZQ-5QYMSJG-NHK8Z2D-S8YJHDB'
+					}
+				});
 				if (!response.ok) {
 					throw new Error('Error getting a beer');
 				}

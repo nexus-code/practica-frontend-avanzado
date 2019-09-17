@@ -1,99 +1,87 @@
-
-main.detail-page {
-  display: block;
-  margin: 100px 0;
-}
-
-.error {
-  height: 50vw;
-  width: 100%;
+.detail-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
-.error h1 {
-  margin-top: 50px;
-  font-size: 2rem;
-}
-.error p {
-  margin: 10px;
+/* 
+.detail-card i,
+.detail-card button {
+  cursor: pointer;
+} */
+
+.detail-card header {
+  padding: 3.5em 1em 1.5em 1em;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #bebebe;
 }
 
-.detail-section header {
-  position: relative;
-  margin: 0 auto;
-  padding-top: 50px;
-  width: 100%;
+.detail-card header h2 {
+  font-size: 3.5rem;
+  color: var(--primary-color);
 }
-@media (min-width: 992px) {
-  .detail-section header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-  }
-}
-.detail-section .title-section {
-  color: #212121;
-  font-size: 2.5rem;
+
+.detail-card header h3 {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  font-weight: 400;
   text-align: center;
-  margin: 10px 0;
 }
-.detail-section .image-container {
-  width: 100%;
-  margin: 0 auto;
-}
-@media (min-width: 992px) {
-  .detail-section .image-container {
-    width: 50%;
-  }
-}
-.detail-section .image-container img {
-  width: 100%;
+
+.detail-card .detail-card-content .detail-card-content-image {
+  width: 30%;
   height: 100%;
+  text-align: center;
+  vertical-align: middle;
 }
-@media (min-width: 992px) {
-  .detail-section .image-container img {
-    border-radius: 25px;
+
+.detail-card .detail-card-content .detail-card-content-image img {
+  max-height: 320px;
+  width: auto;
+}
+
+.detail-card .detail-card-content .detail-card-content-text {
+  width: 70%;
+  height: 100%;
+  color: var(--primary-color) !important;
+}
+
+@media (max-width: 420px) {
+
+  .detail-card .detail-card-content .detail-card-content-image img {
+    max-height: 220px;
+    width: auto;
   }
+
 }
-.detail-section .quotes-list h2 {
-  font-size: 1.2rem;
+
+.detail-card .detail-card-content {
+  box-sizing: border-box;
+  padding: 0 1em 1em 1em;
+  display: flex;
+  justify-content: space-between;
+
 }
-.detail-section .quotes-list .list-item {
-  position: relative;
+
+/* .detail-card .detail-card-content .detail-card-content-text p {
+  max-height: 190px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} */
+
+.detail-card .detail-card-content .detail-card-content-text .rating-container {
+  /* position: absolute;
+  top: 1em;
+  right: 2em; */
+  text-align: right;
+  padding-bottom: 24px;
 }
-.detail-section .quotes-list .list-item span {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+
+.detail-card-content {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
 }
-.detail-section .quotes-list p {
-  font-style: italic;
-  padding: 20px 0;
-}
-.detail-section .content,
-.detail-section .quote-form,
-.detail-section .quotes-list {
-  width: 80%;
-  margin: 20px auto;
-}
-.detail-section .content .quote-input,
-.detail-section .quote-form .quote-input,
-.detail-section .quotes-list .quote-input {
-  margin: 20px 0;
-}
-@media (min-width: 992px) {
-  .detail-section .content,
-.detail-section .quote-form,
-.detail-section .quotes-list {
-    margin: 50px auto;
-    width: 70%;
-  }
-}
-.detail-section .content p,
-.detail-section .quote-form p,
-.detail-section .quotes-list p {
-  line-height: 1.4;
-  margin: 10px 0;
+
+.close .detail-card-content {
+  display: none;
 }
