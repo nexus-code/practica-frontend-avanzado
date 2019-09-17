@@ -53,13 +53,15 @@ const detailTemplate = ({ beerId, name, brewersTips, description, image, firstBr
       <div class="detail-card-content">
         <div class="detail-card-content-image">
           <img src="${image ? image : '/src/images/default.jpg'}">
+          <br>
+          <button class="button">I like</button>
         </div>
         <div class="detail-card-content-text">
           <div class="rating-container">
-             <i class="fa fa-usd text-highlight" aria-hidden="true"></i> ${price}&nbsp;&nbsp;
-            <i class="fa fa-calendar-o text-highlight" aria-hidden="true"></i> ${firstBrewed} &nbsp;&nbsp;
-            <i class="fa fa-heart-o text-highlight" aria-hidden="true"></i> ${likes} &nbsp;&nbsp;
-            <i class="fa fa-comment-o text-highlight" aria-hidden="true"></i> ${comments.length} &nbsp;&nbsp;
+            <i class="fa fa-usd text-grey" aria-hidden="true"></i> ${price}&nbsp;&nbsp;
+            <i class="fa fa-calendar-o text-grey" aria-hidden="true"></i> ${firstBrewed}&nbsp;&nbsp;
+            <i class="fa fa-heart-o text-grey" aria-hidden = "true"></i> ${likes}&nbsp;&nbsp;
+            <i class="fa fa-comment-o text-grey" aria-hidden="true"></i> ${comments.length}
           </div>
           <p>${description}</p>
         </div>
@@ -69,9 +71,10 @@ const detailTemplate = ({ beerId, name, brewersTips, description, image, firstBr
 
 export const renderDetail = async id => {
   
-  document.querySelector('.div-presentation').style.display = 'none';
-  document.querySelector('#appTitle').style.display = 'none';
-
+	// hide home elements
+	document.querySelector('.div-presentation').style.display = 'none';
+	document.querySelector('#appTitle').style.display = 'none';
+  
 	try {
 		// const [beer, quotes] = await Promise.all([getBeerDetail(id), getQuotes(id)]);
 		// renderQuotes(quotes);
@@ -79,7 +82,9 @@ export const renderDetail = async id => {
 		const beer = beerTmp.beer;
 		const beerHTML = detailTemplate(beer);
 		document.querySelector('main').innerHTML = beerHTML;
-  } catch (e) {
+	} catch (e) {
 		console.error(e);
+	} finally {
+		window.scrollTo(0, 0);
 	}
 };

@@ -61,7 +61,9 @@ const {getBeers} = api();
 
 const renderBeersDOM = async text => {
 
-    
+	// show home elements. Always, although it is only needed when coming to detail
+	document.querySelector('.div-presentation').style.display = 'block';
+	document.querySelector('#appTitle').style.display = 'block';
 
 	try {
 		renderLoader('hide', 'beer');

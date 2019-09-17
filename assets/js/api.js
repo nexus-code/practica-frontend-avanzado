@@ -39,8 +39,6 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 				}
 				const apiData = await response.json();
 				const data = apiData.beers;
-				console.log(data);
-
 				const formatData = data.map(item => {
 					if (item.beer) {
 						return item.beer;

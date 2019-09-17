@@ -3,11 +3,6 @@
   display: flex;
   flex-direction: column;
 }
-/* 
-.detail-card i,
-.detail-card button {
-  cursor: pointer;
-} */
 
 .detail-card header {
   padding: 3.5em 1em 1.5em 1em;
@@ -52,6 +47,10 @@
     width: auto;
   }
 
+  .detail-card .detail-card-content .detail-card-content-text .rating-container {
+    font-size: 1rem;
+  }
+
 }
 
 .detail-card .detail-card-content {
@@ -62,16 +61,7 @@
 
 }
 
-/* .detail-card .detail-card-content .detail-card-content-text p {
-  max-height: 190px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-} */
-
 .detail-card .detail-card-content .detail-card-content-text .rating-container {
-  /* position: absolute;
-  top: 1em;
-  right: 2em; */
   text-align: right;
   padding-bottom: 24px;
 }
