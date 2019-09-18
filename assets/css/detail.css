@@ -1,7 +1,7 @@
 .detail-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .detail-card header {
@@ -41,6 +41,14 @@
 }
 
 @media (max-width: 420px) {
+
+  .detail-card header h2 {
+    font-size: 2.5rem;
+  }
+
+  .detail-card header h3 {
+    font-size: 1.2rem;
+  }
 
   .detail-card .detail-card-content .detail-card-content-image img {
     max-height: 220px;

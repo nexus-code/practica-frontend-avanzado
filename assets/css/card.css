@@ -9,6 +9,10 @@
   height: 360px;
 }
 
+a .card {
+  height: 100%; 
+}
+
 a .card:hover > *  {
   background-color:rgba(244, 91, 105, .1);
 }

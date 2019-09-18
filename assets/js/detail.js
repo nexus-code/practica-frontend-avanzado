@@ -48,13 +48,13 @@ const detailTemplate = ({ beerId, name, brewersTips, description, image, firstBr
     <div class="detail-card" id="detail">
       <header class="detail-card-header" id="${beerId}">
         <h2>${name}</h2>
-        <h3>~ ${brewersTips} ~</h3>
+        <h3><i class="fa fa-quote-left" aria-hidden="true"></i> ${brewersTips} <i class="fa fa-quote-right" aria-hidden="true"></i></h3>
       </header>
       <div class="detail-card-content">
         <div class="detail-card-content-image">
           <img src="${image ? image : '/src/images/default.jpg'}">
           <br>
-          <button class="button">I like</button>
+          <button>I like</button>
         </div>
         <div class="detail-card-content-text">
           <div class="rating-container">

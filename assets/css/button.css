@@ -1,4 +1,4 @@
-.button, .button.search, .button.primary, .button.secondary {
+button {
   background-color: var(--bg-color);
   border-radius: 2px;
   border: 1px solid var(--highlight-color);
@@ -8,14 +8,15 @@
   font-size: 1rem;
   cursor: pointer;
   margin-top: 1rem;
-  width: 100%;
+  width: 120px;
 }
-.button:hover {
+
+button:hover {
   background-color: var(--highlight-color);
   color: var(--bg-color);
 }
 
-.button.search {
+button.search {
   border: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
