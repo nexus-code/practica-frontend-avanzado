@@ -5,7 +5,7 @@ import {
 import api from './api.js';
 
 const templateBeer = ({name,image,description,beerId,firstBrewed,likes,comments }) => `
-  <a href="http://127.0.0.1:3000/detail/${beerId}">
+  <a href="/detail/${beerId}">
     <div class="card">
       <header class="card-header">
         <h2>${name}</h2>
