@@ -70,41 +70,62 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 				throw err;
 			}
 		},
-		getQuotes: async id => {
+		addLike: async id => {
 			try {
-				const response = await fetch(`${API_URL}/quote/${id}`);
-				if (!response.ok) {
-					throw new Error('Error fetching quotes');
-				}
-				const quotes = await response.json();
-				return quotes;
-			} catch (err) {
-				console.error(err);
-				throw err;
-			}
-		},
-		createQuote: async (id, text) => {
-			try {
-				const response = await fetch(`${API_URL}/quote/${id}`, {
-					method: 'POST',
-					body: JSON.stringify({
-						quote: text
-					}),
-					headers: {
-						'Content-type': 'application/json',
-						'X-API-KEY': API_KEY,
-					},
+				const response = await fetch(`${beersAPIEndpoint}/${id}/like`, {
+					'method': 'POST',
+					'headers': {
+						'user': 'ma.cardenas@nexuscode.com',
+						'X-API-KEY': '5B1BJZQ-5QYMSJG-NHK8Z2D-S8YJHDB'
+					}
 				});
 				if (!response.ok) {
-					throw new Error('Creating quote');
+					throw new Error('Error postting like');
 				}
-				const responseBody = await response.json();
-				return responseBody;
+				
+    			console.log('addLike', id);
+				return 'OK';
+
 			} catch (err) {
 				console.error(err);
 				throw err;
 			}
 		},
+		// getQuotes: async id => {
+		// 	try {
+		// 		const response = await fetch(`${API_URL}/quote/${id}`);
+		// 		if (!response.ok) {
+		// 			throw new Error('Error fetching quotes');
+		// 		}
+		// 		const quotes = await response.json();
+		// 		return quotes;
+		// 	} catch (err) {
+		// 		console.error(err);
+		// 		throw err;
+		// 	}
+		// },
+		// createQuote: async (id, text) => {
+		// 	try {
+		// 		const response = await fetch(`${API_URL}/quote/${id}`, {
+		// 			method: 'POST',
+		// 			body: JSON.stringify({
+		// 				quote: text
+		// 			}),
+		// 			headers: {
+		// 				'Content-type': 'application/json',
+		// 				'X-API-KEY': API_KEY,
+		// 			},
+		// 		});
+		// 		if (!response.ok) {
+		// 			throw new Error('Creating quote');
+		// 		}
+		// 		const responseBody = await response.json();
+		// 		return responseBody;
+		// 	} catch (err) {
+		// 		console.error(err);
+		// 		throw err;
+		// 	}
+		// },
 	};
 };
 

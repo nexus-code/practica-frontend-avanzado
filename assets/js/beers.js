@@ -30,12 +30,7 @@ const templateBeer = ({name,image,description,beerId,firstBrewed,likes,comments 
 
 const renderBeers = (element, beers) => {
 	const htmlBeers = beers.slice(0, 10).map((beer, index) => {
-		// if (index < 2) {
-		// 	return templateBeer({
-		// 		...beer,
-		// 		principal: true
-		// 	});
-		// }
+
 		return templateBeer({
 			...beer,
 			principal: false
@@ -46,15 +41,6 @@ const renderBeers = (element, beers) => {
       ${htmlBeers}
     </div>
   `;
-	// codigo para manejar los header
-	const headers = document.querySelectorAll('.card.secondary .card-header');
-	headers.forEach(header => {
-		const element = header.parentNode;
-		header.addEventListener('click', evt => {
-			evt.preventDefault();
-			toggleClass(element, 'close');
-		});
-	});
 };
 
 const {getBeers} = api();
