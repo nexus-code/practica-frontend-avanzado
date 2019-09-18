@@ -59,11 +59,16 @@ const renderBeers = (element, beers) => {
 
 const {getBeers} = api();
 
-const renderBeersDOM = async text => {
-
-	// show home elements. Always, although it is only needed when coming to detail
+function loadPresentation(){
+	
+	// show presentation element sin home. Always, although it is only needed when coming to detail
 	document.querySelector('.div-presentation').style.display = 'block';
 	document.querySelector('#appTitle').style.display = 'block';
+}
+
+const renderBeersDOM = async text => {
+
+	loadPresentation();
 
 	try {
 		renderLoader('hide', 'beer');

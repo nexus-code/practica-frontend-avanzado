@@ -51,7 +51,7 @@ h1 span {
   color: var(--highlight-color);
   display: block;
   font-size: calc(var(--font-size)*1.2);
-  margin-top: -14px;
+  margin-top: -64px;
 }
 
 h2 {
