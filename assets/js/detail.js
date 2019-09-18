@@ -31,9 +31,12 @@ const detailTemplate = ({ beerId, name, brewersTips, description, image, firstBr
 
 function hidePresentation() {
 
-  // hide presentation elements in home
+  // hide presentation elements in detail
   document.querySelector('.div-presentation').style.display = 'none';
   document.querySelector('#appTitle').style.display = 'none';
+
+  // menu selector
+  document.querySelector('#menu_home').classList.remove("active");
 }
 
 export const renderDetail = async id => {
