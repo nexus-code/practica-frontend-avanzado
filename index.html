@@ -25,10 +25,15 @@
         <input type="checkbox" id="burger-checkbox">
         <label for="burger-checkbox" class="burger-label"></label>
         <ul class="navbar-list">
-            <li class="navbar-item"><a href="/" id="menu_home" class="active"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-            <li class="navbar-item"><a href="#" id="menu_beers"><i class="fa fa-beer" aria-hidden="true"></i> Cervezas</a></li>
-            <li class="navbar-item"><a href="#" id="menu_news"><i class="fa fa-exclamation" aria-hidden="true"></i></i> Novedades</a></li>
-            <li class="navbar-item"><a href="#" id="menu_selection"><i class="fa fa-user-o" aria-hidden="true"></i> Mi selección</a></li>
+            <li class="navbar-item"><a href="/" id="menu_home" class="active"><i class="fa fa-beer" aria-hidden="true"></i> Home</a></li>
+            <li class="navbar-item"><a href="#" id="menu_news"><i class="fa fa-exclamation" aria-hidden="true"></i> News</a></li>
+            <li class="navbar-item"><a href="#" id="menu_selection"><i class="fa fa-user-o" aria-hidden="true"></i> My selection </a></li>
+            <li class="navbar-item">
+                <div id="search-container">
+                    <input type="text" id="searchInput" placeholder="Search.."><a href="#" id="searchButton"><i
+                            class="fa fa-search"></i></a>
+                </div>
+            </li>
         </ul>
     </nav>
     <header>
@@ -88,8 +93,11 @@
     </footer>
 
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-    <script type="module" src="/assets/js/main.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
     <script type="module" src="/assets/js/routes.js" crossorigin="anonymous"></script>
+    <script type="module" src="/assets/js/main.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/app.js"></script>
 
 </body>
 </html>

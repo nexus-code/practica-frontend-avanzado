@@ -19,10 +19,11 @@
 // test();
 
 const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1/') => {
-	const searchAPIEndpoint = `${API_URL}search/beers?q=`;
+	const searchAPIEndpoint = `${API_URL}beers?search=`;
 	const beersAPIEndpoint = `${API_URL}beers`;
 	return {
 		getBeers: async text => {
+				console.log('getBeers text', text);
             
 			try {
 				const requestUrl = text ? `${searchAPIEndpoint}${text}` : beersAPIEndpoint;

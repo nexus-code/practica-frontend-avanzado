@@ -21,6 +21,7 @@ a .card:hover > *  {
 @media (max-width: 420px) {
   .card {
     margin: 20px;
+    height: 400px!important;
   }
 }
 

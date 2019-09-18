@@ -29,18 +29,22 @@ const templateBeer = ({name,image,description,beerId,firstBrewed,likes,comments 
 `;
 
 const renderBeers = (element, beers) => {
-	const htmlBeers = beers.slice(0, 10).map((beer, index) => {
+	let htmlBeers = beers.slice(0, 10).map((beer, index) => {
 
 		return templateBeer({
 			...beer,
 			principal: false
 		});
 	}).join('');
+
+	if (htmlBeers == '') 
+		htmlBeers = '<div class="beers-404"> This is a terrible 404!! <span>We don´t have that beer!</span></div>';
+
 	element.innerHTML = `
-    <div class="beer-section">
-      ${htmlBeers}
-    </div>
-  `;
+		<div class="beer-section">
+		${htmlBeers}
+		</div>
+	`;
 };
 
 const {getBeers} = api();

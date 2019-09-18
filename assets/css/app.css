@@ -54,6 +54,12 @@ h1 span {
   margin-top: -64px;
 }
 
+@media (max-width: 420px) {
+  h1 span {
+    margin-top: -20px;
+  }
+}
+
 h2 {
   /* background-color: var(--secondary-color); */
   color: var(--bg-color);
@@ -108,6 +114,18 @@ main {
 }
 
 /* 3 My styles */
+
+.beers-404 {
+  padding: 60px 0;
+  font-size: calc(var(--font-size)*2);
+  text-align: center;
+
+}
+
+.beers-404 span{
+  color: var(--highlight-color)!important;
+  display: block;
+}
 
 .text-centered {
   text-align: center;
