@@ -5,7 +5,7 @@ import {
 import api from './api.js';
 
 const templateBeer = ({name,image,description,beerId,firstBrewed,likes,comments }) => `
-  <a href="/detail/${beerId}">
+  <a href="http://127.0.0.1:3000/detail/${beerId}">
     <div class="card">
       <header class="card-header">
         <h2>${name}</h2>
@@ -56,8 +56,14 @@ function loadPresentation(){
 	document.querySelector('#appTitle').style.display = 'block';
 	
 	// menu selector
-	document.querySelector('#menu_home').classList.remove("active");
-	document.querySelector('#menu_home').classList.add("active");
+	document.querySelector('#menuHome').classList.remove('active');
+	document.querySelector('#menuHome').classList.add('active');
+}
+
+function hideImgPresentation() {
+
+	// hide img presentation on searchs
+	document.querySelector('.div-presentation').style.display = 'none';
 }
 
 // return if value is a year between 1800 & current
@@ -80,17 +86,29 @@ function isValidYear(value) {
 }
 
 // return beers filter by year on firstBrewed
-function beersByYear(beers, year) {
+function filterByYear(beers, year) {
 
 	// const filter = beers.filter(beer => beer.likes > 0);
 	const filter = beers.filter(beer => beer.firstBrewed.split('/')[1] == year);
 	
-	return filter.sort(function (a, b) {return parseInt(a.firstBrewed.split('/')[0]) - parseInt(b.firstBrewed.split('/')[0]);});
+	return filter.sort(function (a, b) { return parseInt(a.firstBrewed.split('/')[0]) - parseInt(b.firstBrewed.split('/')[0]); });
+}
+
+// return most valued beers: beers with likes > 0 order by likes 
+function mostValued(beers) {
+
+	// const filter = beers.filter(beer => beer.likes > 0);
+	const filter = beers.filter(beer => beer.likes > 0);
+
+	return filter.sort(function (a, b) { return b.likes - a.likes; });
 }
 
 const renderBeersDOM = async text => {
 
-	loadPresentation();
+	if (typeof text == 'undefined')
+		loadPresentation();
+	else
+		hideImgPresentation();
 
 	try {
 		renderLoader('hide', 'beer');
@@ -100,16 +118,25 @@ const renderBeersDOM = async text => {
 				SEARCH throw API if text is not a valid year; else use array.filter(beer.firstBrewed)				
 		*********************************************************************/
 		
-		// let items = [];
+		// const items = isValidYear(text) ? filterByYear(await getBeers(), text) : await getBeers(text); // uf!!! esto sí que se merece una cerveza!!!!
 		
-		// if (isValidYear(text)){
-		// 	items = await getBeers();
-		// 	items = beersByYear(items, text);
-		// } else {
-		// 	items = await getBeers(text);
-		// }
+		let items = [];
+		
+		if (text == 'mostValued') {
 
-		const items = isValidYear(text) ? beersByYear(await getBeers(), text) : await getBeers(text); // uf!!! esto sí que vale una cerveza!!!!
+			items = await getBeers();
+			items = mostValued(items);
+
+		} else if (isValidYear(text)) {
+			
+			items = await getBeers();
+			items = filterByYear(items, text);
+
+		} else {
+			
+			items = await getBeers(text);
+		}
+
 
 		renderBeers(mainSection, items);
 	} catch (err) {

@@ -36,7 +36,7 @@ function hidePresentation() {
 	document.querySelector('#appTitle').style.display = 'none';
 
 	// menu selector
-	document.querySelector('#menu_home').classList.remove("active");
+	document.querySelector('#menuHome').classList.remove('active');
 }
 
 export const renderDetail = async id => {
