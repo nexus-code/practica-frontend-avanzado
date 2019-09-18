@@ -63,11 +63,9 @@ export const renderDetail = async id => {
 		evt.preventDefault();
     
 		if (evt.target.id == 'submitLike') {
-			console.log('submitLike');
-			// const [likeAdded] = await Promise.all([addLike(id)]);
+			// console.log('evt  submitLike');
 			const likeAdded = addLike(id);
-			console.log('likeAdded', likeAdded);
-      
+			// console.log('evt likeAdded', likeAdded);
 		}
 	});
   

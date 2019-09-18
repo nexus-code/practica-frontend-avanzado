@@ -5,10 +5,8 @@
 @import "loader.css";
 @import "input.css";
 @import "card.css";
-@import "icon.css";
 @import "detail.css";
 @import "mainSection.css";
-/* @import "navbar.css"; */
 
 * {
   font-family: 'Roboto', Verdana;

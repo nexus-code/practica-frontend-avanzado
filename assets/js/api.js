@@ -20,13 +20,13 @@
 
 const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1/') => {
 	const searchAPIEndpoint = `${API_URL}search/beers?q=`;
-	const beersAPIEndpoint = `${API_URL}beers`;
+	const beersAPIEndpoint = `${API_URL}beers?limit=10`;
 	return {
 		getBeers: async text => {
             
 			try {
 				const requestUrl = text ? `${searchAPIEndpoint}${text}` : beersAPIEndpoint;
-				console.log(requestUrl);
+				console.log('requestUrl', requestUrl);
 				const response = await fetch(requestUrl, {
 					'method': 'GET',
 					'headers': {
@@ -83,7 +83,7 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 					throw new Error('Error postting like');
 				}
 				
-    			console.log('addLike', id);
+    			// console.log('API addLike', id);
 				return 'OK';
 
 			} catch (err) {
