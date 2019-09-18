@@ -25,13 +25,16 @@
         <input type="checkbox" id="burger-checkbox">
         <label for="burger-checkbox" class="burger-label"></label>
         <ul class="navbar-list">
-            <li class="navbar-item"><a href="/" id="menu_home" class="active"><i class="fa fa-beer" aria-hidden="true"></i> Home</a></li>
+            <li class="navbar-item"><a href="/" id="menu_home" class="active"> <i class="fa fa-home" aria-hidden="true"></i> </a></li>
             <li class="navbar-item"><a href="#" id="menu_news"><i class="fa fa-exclamation" aria-hidden="true"></i> News</a></li>
             <li class="navbar-item"><a href="#" id="menu_selection"><i class="fa fa-user-o" aria-hidden="true"></i> My selection </a></li>
             <li class="navbar-item">
-                <div id="search-container">
-                    <input type="text" id="searchInput" placeholder="Search.."><a href="#" id="searchButton"><i
-                            class="fa fa-search"></i></a>
+                <div class="search-container">
+                    <form id="search-form">
+                        <input type="text" id="searchInput" placeholder="e.g: black or 2010" required>
+                        <button type="reset" id="resetButton" title="Remove search param"><i class="fa fa-times"></i></buton>
+                        <button type="submit" id="searchButton" title="Serch beers by text or year"><i class="fa fa-search"></i></buton>
+                    </form>
                 </div>
             </li>
         </ul>

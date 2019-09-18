@@ -51,13 +51,41 @@ const {getBeers} = api();
 
 function loadPresentation(){
 	
-	// show presentation element sin home. Always, although it is only needed when coming to detail
+	// show presentation elements in home. Always, although it is only needed when coming to detail
 	document.querySelector('.div-presentation').style.display = 'block';
 	document.querySelector('#appTitle').style.display = 'block';
 	
 	// menu selector
 	document.querySelector('#menu_home').classList.remove("active");
 	document.querySelector('#menu_home').classList.add("active");
+}
+
+// return if value is a year between 1800 & current
+function isValidYear(value) {
+
+	if(isNaN(value)){
+		return false;
+	}
+	
+	const intValue = parseInt(value); 
+
+	if (!Number.isInteger(intValue)) {
+		return false;
+	}
+	
+	const d = new Date();
+	const currentYear = d.getFullYear();
+	
+	return (intValue > 1800) && (intValue <= currentYear);
+}
+
+// return beers filter by year on firstBrewed
+function beersByYear(beers, year) {
+
+	// const filter = beers.filter(beer => beer.likes > 0);
+	const filter = beers.filter(beer => beer.firstBrewed.split('/')[1] == year);
+	
+	return filter.sort(function (a, b) {return parseInt(a.firstBrewed.split('/')[0]) - parseInt(b.firstBrewed.split('/')[0]);});
 }
 
 const renderBeersDOM = async text => {
@@ -67,7 +95,22 @@ const renderBeersDOM = async text => {
 	try {
 		renderLoader('hide', 'beer');
 		const mainSection = document.querySelector('main');
-		const items = await getBeers(text);
+
+		/********************************************************************* 
+				SEARCH throw API if text is not a valid year; else use array.filter(beer.firstBrewed)				
+		*********************************************************************/
+		
+		// let items = [];
+		
+		// if (isValidYear(text)){
+		// 	items = await getBeers();
+		// 	items = beersByYear(items, text);
+		// } else {
+		// 	items = await getBeers(text);
+		// }
+
+		const items = isValidYear(text) ? beersByYear(await getBeers(), text) : await getBeers(text); // uf!!! esto sí que vale una cerveza!!!!
+
 		renderBeers(mainSection, items);
 	} catch (err) {
 		console.error(err);

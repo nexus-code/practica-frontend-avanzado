@@ -23,11 +23,9 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 	const beersAPIEndpoint = `${API_URL}beers`;
 	return {
 		getBeers: async text => {
-				console.log('getBeers text', text);
-            
 			try {
 				const requestUrl = text ? `${searchAPIEndpoint}${text}` : beersAPIEndpoint;
-				console.log('requestUrl', requestUrl);
+				
 				const response = await fetch(requestUrl, {
 					'method': 'GET',
 					'headers': {
