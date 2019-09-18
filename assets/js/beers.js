@@ -29,7 +29,7 @@ const templateBeer = ({name,image,description,beerId,firstBrewed,likes,comments 
 `;
 
 const renderBeers = (element, beers) => {
-	const htmlBeers = beers.map((beer, index) => {
+	const htmlBeers = beers.slice(0, 10).map((beer, index) => {
 
 		return templateBeer({
 			...beer,
