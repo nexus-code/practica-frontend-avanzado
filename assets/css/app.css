@@ -144,8 +144,32 @@ main {
   padding-top: 10vh;
 }
 
-.div-presentation{
-  text-align: center;
+.div-presentation {
+  background-color: var(--bg-secondary-color);
+  padding-bottom: 60px;
+}
+
+.div-presentation p{
+  padding-top: 32px;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  font-size: calc(var(--font-size)*1.3);
+  text-align: justify;
+}
+
+.div-presentation p span{
+  font-weight: bold;
+}
+
+.div-presentation p:last-child {
+  text-align: right;
+  font-size: calc(var(--font-size)*1.5);
+}
+
+@media (max-width: 420px) {
+  .div-presentation p, .div-presentation p:last-child {
+    font-size: calc(var(--font-size)*1);
+  }
 }
 
 .div-presentation img{

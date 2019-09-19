@@ -85,7 +85,6 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 					throw new Error('Error postting like');
 				}
 				
-    			// console.log('API addLike', id);
 				return 'OK';
 
 			} catch (err) {

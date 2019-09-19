@@ -83,7 +83,6 @@ function isValidYear(value) {
 // return beers filter by year on firstBrewed
 function filterByYear(beers, year) {
 
-	// const filter = beers.filter(beer => beer.likes > 0);
 	const filter = beers.filter(beer => beer.firstBrewed.split('/')[1] == year);
 	
 	return filter.sort(function (a, b) { return parseInt(a.firstBrewed.split('/')[0]) - parseInt(b.firstBrewed.split('/')[0]); });
@@ -92,10 +91,16 @@ function filterByYear(beers, year) {
 // return most valued beers: beers with likes > 0 order by likes 
 function mostValued(beers) {
 
-	// const filter = beers.filter(beer => beer.likes > 0);
 	const filter = beers.filter(beer => beer.likes > 0);
 
 	return filter.sort(function (a, b) { return b.likes - a.likes; });
+}
+
+// return latests beers: 
+function latests(beers) {
+
+	return beers.sort(function (a, b) { return parseInt(b.firstBrewed.split('/')[1]) - parseInt(a.firstBrewed.split('/')[1]); });
+	return beers.sort(function (a, b) { return parseInt(b.firstBrewed.split('/')[1]) - parseInt(a.firstBrewed.split('/')[1]); });
 }
 
 export const renderBeersDOM = async query => {
@@ -116,10 +121,15 @@ export const renderBeersDOM = async query => {
 		
 		let items = [];
 		
-		if (query == 'mostValued') {
+		if (query == 'bfMostValued') {
 
 			items = await getBeers();
 			items = mostValued(items);
+
+		} else if (query == 'bfLatests') {
+
+			items = await getBeers();
+			items = latests(items);
 
 		} else if (isValidYear(query)) {
 			
