@@ -7,7 +7,7 @@ const { createComment } = api();
 
 const commentTemplate = ({ dateComment, comment }) => `
   <div class="list-item">
-    <p>${dateComment}<br>${comment}</p>
+    <p><span>${dateComment}</span><br>${comment}</p>
   </div>
 `;
 
@@ -55,15 +55,13 @@ const detailTemplate = ({ beerId, name, brewersTips, description, image, firstBr
 						<p>${description}</p>
 					</div>
 				</div>
-				<div class="comments-list">
-					<h2>Comments</h2>
-					<div id="commentsList">${commentsList}</div>
-				</div>
+				<h2>Comments</h2>
+				<div class="comment-list" id="commentsList">${commentsList}</div>
 				<div class="comment-input">
 					<form id="comment-form" class="comment-form" novalidate>
-						<label for="comment">Comment this beer</label>
-						<input id="commentInput" placeholder="Add your comment" class="input primary" type="text" required>
-						<button id="submitComent" type="submit" class="button primary">Add comment</button>
+						<label for="commentInput">Comment this beer:</label>
+						<input id="commentInput" placeholder="Add your comment" type="text" required class="input">
+						<button id="submitComent" type="submit" class="button primary">Add</button>
 					</form>
 				</div>
 			</div>`;

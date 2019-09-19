@@ -81,3 +81,72 @@
   }
 
 }
+
+/* commets */
+.detail-card h2 {
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+}
+.detail-card .comment-list {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+}
+
+.detail-card .comment-list .list-item {
+  border-bottom: 1px solid var(--bg-primary-color);
+  background-color: var(--bg-secondary-color);
+  margin-bottom: 12px;
+}
+
+.detail-card .comment-list .list-item p{
+    font-style: italic;
+    padding: 20px;
+}
+
+.detail-card .comment-list .list-item span {
+  font-size: .6rem;
+}
+
+/* .detail-card .comment-list p {
+  font-style: italic;
+  padding: 20px 0;
+} */
+
+.detail-card .content,
+.detail-card .comment-input,
+.detail-card .comment-list {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.detail-card .comment-input {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+}
+
+.detail-card .comment-input label {
+  font-weight: bold;
+}
+
+.detail-card .comment-input .input {
+  width: 400px;
+  margin: 5px 0;
+  height: 32px;
+  padding: 4px 6px;
+}
+
+@media (max-width: 420px) {
+
+  .detail-card .content,
+  .detail-card .comment-input,
+  .detail-card .comment-list {
+    margin: 10px auto;
+    width: 80%;
+  }
+
+  .detail-card .comment-input .input {
+    width: 300px;
+  }
+
+
+}

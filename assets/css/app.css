@@ -61,8 +61,7 @@ h1 span {
 }
 
 h2 {
-  /* background-color: var(--secondary-color); */
-  color: var(--bg-color);
+  color: var(--primary-color);
   font-size: calc(var(--font-size)*1.25);
   padding: 1rem; 
   vertical-align: middle;
@@ -188,19 +187,6 @@ ul li {
 ul#social-list li {
   font-size: calc(var(--font-size)*1.75);
   padding-right: 1rem;
-}
-
-ul#breadcrumbs {
-  text-align: right;
-  padding: .75rem
-}
-
-ul#breadcrumbs li+li:before {
-  content: "/\00a0";
-}
-
-ul#breadcrumbs li:last-child {
-  font-weight: 600;
 }
 
 /* 5. footer */

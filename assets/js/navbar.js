@@ -22,9 +22,6 @@ searchButton.addEventListener('click', (evt) => {
 
 resetButton.addEventListener('click', (evt) => {
   
-  evt.preventDefault();
-  
-  searchInput.value = '';
-  setItem('search', searchInput.value);
-  renderBeersDOM();
+	searchInput.value = '';
+	setItem('search', searchInput.value);
 });
