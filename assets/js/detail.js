@@ -58,14 +58,12 @@ export const renderDetail = async id => {
 		window.scrollTo(0, 0);
 	}
   
-	// event click on addLike button (dinamicaly created)
+	// event click on addLike button (this button is dinamicaly created)
+	// Caution!!! this eventListener is over MAIN, can overwrite other behavoirs (caution on use evt.preventDefault())
 	mainDiv.addEventListener('click', evt => {
-		evt.preventDefault();
-    
+		
 		if (evt.target.id == 'submitLike') {
-			// console.log('evt  submitLike');
 			const likeAdded = addLike(id);
-			// console.log('evt likeAdded', likeAdded);
 		}
 	});
   

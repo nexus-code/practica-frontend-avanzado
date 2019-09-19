@@ -5,7 +5,7 @@ import {
 import api from './api.js';
 
 const templateBeer = ({name,image,description,beerId,firstBrewed,likes,comments }) => `
-  <a href="/detail/${beerId}">
+  <a href="/detail/${beerId}" id="hrefDetail">
     <div class="card">
       <header class="card-header">
         <h2>${name}</h2>
@@ -29,13 +29,8 @@ const templateBeer = ({name,image,description,beerId,firstBrewed,likes,comments 
 `;
 
 const renderBeers = (element, beers) => {
-	let htmlBeers = beers.slice(0, 10).map((beer, index) => {
-
-		return templateBeer({
-			...beer,
-			principal: false
-		});
-	}).join('');
+	// let htmlBeers = beers.slice(0, 10).map((beer, index) => {return templateBeer({...beer});}).join('');
+	let htmlBeers = beers.slice(0, 10).map(beer => templateBeer({...beer})).join('');
 
 	if (htmlBeers == '') 
 		htmlBeers = '<div class="beers-404"> This is a terrible 404!! <span>We don´t have that beer!</span></div>';

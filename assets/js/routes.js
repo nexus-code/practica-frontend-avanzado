@@ -4,6 +4,8 @@ import './navbar.js';
 
 import { renderBeersDOM } from './beers.js';
 import { renderDetail } from './detail.js';
+// import { handleFilter, handleForm, renderLoader, handleMainContainer } from './ui.js';
+
 
 page('/', async (_, next) => {
 	// renderLoader('hide', 'show');
