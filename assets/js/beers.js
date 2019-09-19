@@ -1,31 +1,35 @@
 import api from './api.js';
 
-const templateBeer = ({name,image,description,beerId,firstBrewed,likes,comments }) => `
-  <a href="/detail/${beerId}" id="hrefDetail">
-    <div class="card">
-      <header class="card-header">
-        <h2>${name}</h2>
-      </header>
-      <div class="card-content">
-        <div class="card-content-image">
-          <img src="${image ? image : '/src/images/default.jpg'}" alt="${name}">
-        </div>
-        <div class="card-content-text">
-          <p>${description}
-          </p>
-          <div class="rating-container">
-            <i class="fa fa-calendar-o text-highlight" aria-hidden="true"></i> ${firstBrewed} &nbsp;&nbsp;
-            <i class="fa fa-heart-o text-highlight" aria-hidden="true"></i> ${likes} &nbsp;&nbsp;
-            <i class="fa fa-comment-o text-highlight" aria-hidden="true"></i> ${comments.length} &nbsp;&nbsp;
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-`;
+const templateBeer = ({name, image, description, beerId, firstBrewed, likes, comment }) => {
+
+	// beer.comments is empty. When a comment is added, API create property comment[]
+	const commentsLength = (typeof comment == 'undefined') ? 0 : comment.length;
+
+	return `<a href="/detail/${beerId}" id="hrefDetail">
+				<div class="card">
+				<header class="card-header">
+					<h2>${name}</h2>
+				</header>
+				<div class="card-content">
+					<div class="card-content-image">
+					<img src="${image ? image : '/src/images/default.jpg'}" alt="${name}">
+					</div>
+					<div class="card-content-text">
+					<p>${description}
+					</p>
+					<div class="rating-container">
+						<i class="fa fa-calendar-o text-highlight" aria-hidden="true"></i> ${firstBrewed} &nbsp;&nbsp;
+						<i class="fa fa-heart-o text-highlight" aria-hidden="true"></i> ${likes} &nbsp;&nbsp;
+						<i class="fa fa-comment-o text-highlight" aria-hidden="true"></i> ${commentsLength} &nbsp;&nbsp;
+					</div>
+					</div>
+				</div>
+				</div>
+			</a>`;
+};
 
 const renderBeers = (element, beers) => {
-	// let htmlBeers = beers.slice(0, 10).map((beer, index) => {return templateBeer({...beer});}).join('');
+
 	let htmlBeers = beers.slice(0, 10).map(beer => templateBeer({...beer})).join('');
 
 	if (htmlBeers == '') 

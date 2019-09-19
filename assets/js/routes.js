@@ -2,13 +2,16 @@
 
 import './navbar.js';
 
+// import { renderQuotes } from './quotes.js';
 import { renderBeersDOM } from './beers.js';
 import { renderDetail } from './detail.js';
 import { renderLoader } from './ui.js';
 
 
 page('/', async (_, next) => {
+	
 	renderLoader('hide', 'show');
+	// hideQuotes();
 	// handleFilter('no-filter', 'filter');
 	// handleMainContainer('detail-page', 'home-page');
 	// handleForm('none');
@@ -17,10 +20,11 @@ page('/', async (_, next) => {
 }, () => {
 	renderLoader('show', 'hide');
 });
+
 page('/mostvalued/', async (_, next) => {
 
-
 	renderLoader('hide', 'show');
+	// hideQuotes();
 	// handleFilter('no-filter', 'filter');
 	// handleMainContainer('detail-page', 'home-page');
 	// handleForm('none');
@@ -29,6 +33,7 @@ page('/mostvalued/', async (_, next) => {
 }, () => {
 	renderLoader('show', 'hide');
 });
+
 page('/detail/:id', async (ctx, next) => {
 	renderLoader('hide', 'show');
 	// handleFilter('filter', 'no-filter');

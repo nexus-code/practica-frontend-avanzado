@@ -2,7 +2,7 @@
 
 // 1
 // const myCredentials = () => async value => {
-
+	
 // 	const response = await fetch('assets/credentials/response_1568688711912.json');
 // 	if (!response.ok) {
 // 		throw new Error('Error fetching credentials');
@@ -18,6 +18,9 @@
 // const test = myCredentials();
 // test();
 
+const API_USER = 'ma.cardenas@nexuscode.com';
+const API_KEY = '5B1BJZQ-5QYMSJG-NHK8Z2D-S8YJHDB';
+
 const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1/') => {
 	const searchAPIEndpoint = `${API_URL}beers?search=`;
 	const beersAPIEndpoint = `${API_URL}beers`;
@@ -29,8 +32,8 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 				const response = await fetch(requestUrl, {
 					'method': 'GET',
 					'headers': {
-						'user': 'ma.cardenas@nexuscode.com',
-						'X-API-KEY': '5B1BJZQ-5QYMSJG-NHK8Z2D-S8YJHDB'
+						'user': API_USER,
+						'X-API-KEY': API_KEY
 					}
 				});
 				if (!response.ok) {
@@ -55,8 +58,8 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 				const response = await fetch(`${beersAPIEndpoint}/${id}`, {
 					'method': 'GET',
 					'headers': {
-						'user': 'ma.cardenas@nexuscode.com',
-						'X-API-KEY': '5B1BJZQ-5QYMSJG-NHK8Z2D-S8YJHDB'
+						'user': API_USER,
+						'X-API-KEY': API_KEY
 					}
 				});
 				if (!response.ok) {
@@ -74,8 +77,8 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 				const response = await fetch(`${beersAPIEndpoint}/${id}/like`, {
 					'method': 'POST',
 					'headers': {
-						'user': 'ma.cardenas@nexuscode.com',
-						'X-API-KEY': '5B1BJZQ-5QYMSJG-NHK8Z2D-S8YJHDB'
+						'user': API_USER,
+						'X-API-KEY': API_KEY
 					}
 				});
 				if (!response.ok) {
@@ -90,41 +93,29 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
 				throw err;
 			}
 		},
-		// getQuotes: async id => {
-		// 	try {
-		// 		const response = await fetch(`${API_URL}/quote/${id}`);
-		// 		if (!response.ok) {
-		// 			throw new Error('Error fetching quotes');
-		// 		}
-		// 		const quotes = await response.json();
-		// 		return quotes;
-		// 	} catch (err) {
-		// 		console.error(err);
-		// 		throw err;
-		// 	}
-		// },
-		// createQuote: async (id, text) => {
-		// 	try {
-		// 		const response = await fetch(`${API_URL}/quote/${id}`, {
-		// 			method: 'POST',
-		// 			body: JSON.stringify({
-		// 				quote: text
-		// 			}),
-		// 			headers: {
-		// 				'Content-type': 'application/json',
-		// 				'X-API-KEY': API_KEY,
-		// 			},
-		// 		});
-		// 		if (!response.ok) {
-		// 			throw new Error('Creating quote');
-		// 		}
-		// 		const responseBody = await response.json();
-		// 		return responseBody;
-		// 	} catch (err) {
-		// 		console.error(err);
-		// 		throw err;
-		// 	}
-		// },
+		createComment: async (id, comment) => {
+			try {
+				const response = await fetch(`${beersAPIEndpoint}/${id}/comment`, {
+					method: 'POST',
+					body: JSON.stringify({
+						comment: comment
+					}),
+					headers: {
+						'Content-type': 'application/json',
+						'user': API_USER,
+						'X-API-KEY': API_KEY,
+					},
+				});
+				if (!response.ok) {
+					throw new Error('Creating comment');
+				}
+				const responseBody = await response.json();
+				return responseBody;
+			} catch (err) {
+				console.error(err);
+				throw err;
+			}
+		},
 	};
 };
 
