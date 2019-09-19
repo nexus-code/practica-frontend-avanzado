@@ -67,6 +67,18 @@
   border-bottom: 1px solid var(--highlight-color);
 }
 
+.navbar-item input[type=text]:focus {
+  color: #fff;
+  background-color: var(--highlight-color);
+  
+  /* prevent blue border on focus */
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
 .navbar-item .search-container button {
   float: right;
   padding: 6px;

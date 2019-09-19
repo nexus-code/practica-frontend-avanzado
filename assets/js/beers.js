@@ -8,7 +8,7 @@ const templateBeer = ({name,image,description,beerId,firstBrewed,likes,comments 
       </header>
       <div class="card-content">
         <div class="card-content-image">
-          <img src="${image ? image : '/src/images/default.jpg'}">
+          <img src="${image ? image : '/src/images/default.jpg'}" alt="${name}">
         </div>
         <div class="card-content-text">
           <p>${description}

@@ -12,7 +12,7 @@ const detailTemplate = ({ beerId, name, brewersTips, description, image, firstBr
     </header>
     <div class="detail-card-content">
       <div class="detail-card-content-image">
-        <img src="${image ? image : '/src/images/default.jpg'}">
+        <img src="${image ? image : '/src/images/default.jpg'}" alt="${name}">
         <br>
         <button id="submitLike">I like</button>
       </div>

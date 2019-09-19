@@ -269,3 +269,13 @@ footer p:last-child {
     opacity: 1
   }
 }
+
+/* prevent blue border on focus 
+input:focus,
+button:focus {
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}*/

@@ -4,7 +4,7 @@ import './navbar.js';
 
 import { renderBeersDOM } from './beers.js';
 import { renderDetail } from './detail.js';
-import { handleFilter, handleForm, renderLoader, handleMainContainer } from './ui.js';
+import { renderLoader } from './ui.js';
 
 
 page('/', async (_, next) => {
@@ -18,6 +18,8 @@ page('/', async (_, next) => {
 	renderLoader('show', 'hide');
 });
 page('/mostvalued/', async (_, next) => {
+
+
 	renderLoader('hide', 'show');
 	// handleFilter('no-filter', 'filter');
 	// handleMainContainer('detail-page', 'home-page');
