@@ -1,7 +1,3 @@
-import {
-	toggleClass,
-	renderLoader
-} from './ui.js';
 import api from './api.js';
 
 const templateBeer = ({name,image,description,beerId,firstBrewed,likes,comments }) => `
@@ -98,49 +94,41 @@ function mostValued(beers) {
 	return filter.sort(function (a, b) { return b.likes - a.likes; });
 }
 
-const renderBeersDOM = async text => {
+export const renderBeersDOM = async query => {
 
-	if (typeof text == 'undefined')
+	if (typeof query == 'undefined')
 		loadPresentation();
 	else
 		hideImgPresentation();
 
 	try {
-		renderLoader('hide', 'beer');
 		const mainSection = document.querySelector('main');
 
 		/********************************************************************* 
-				SEARCH throw API if text is not a valid year; else use array.filter(beer.firstBrewed)				
+				SEARCH throw API if query is not a valid year; else use array.filter(beer.firstBrewed)				
 		*********************************************************************/
 		
-		// const items = isValidYear(text) ? filterByYear(await getBeers(), text) : await getBeers(text); // uf!!! esto sí que se merece una cerveza!!!!
+		// v1: // const items = isValidYear(query) ? filterByYear(await getBeers(), query) : await getBeers(query); // uf!!! esto sí que se merece una cerveza!!!!
 		
 		let items = [];
 		
-		if (text == 'mostValued') {
+		if (query == 'mostValued') {
 
 			items = await getBeers();
 			items = mostValued(items);
 
-		} else if (isValidYear(text)) {
+		} else if (isValidYear(query)) {
 			
 			items = await getBeers();
-			items = filterByYear(items, text);
+			items = filterByYear(items, query);
 
 		} else {
 			
-			items = await getBeers(text);
+			items = await getBeers(query);
 		}
-
 
 		renderBeers(mainSection, items);
 	} catch (err) {
 		console.error(err);
-	} finally {
-		renderLoader('beer', 'hide');
-	}
-};
-
-export {
-	renderBeersDOM
+	} 
 };

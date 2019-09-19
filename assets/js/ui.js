@@ -1,34 +1,53 @@
-'use strict';
+const navbar = document.getElementById('navbar');
+// const navbarLogo = document
+// 	.querySelector('.navbar-logo');
+// const searchIcon = document
+// 	.getElementById('navbar-search');
+// const closeIcon = document
+// 	.getElementById('navbar-close');
 
-const loader = document.querySelector('#loader');
-const detailSection = document.querySelector('#detailSection');
+const toggle = elemento =>
+	(removeClass, addClass) => {
+		elemento.classList.remove(removeClass);
+		elemento.classList.add(addClass);
+	};
 
-export const showQuotesForm = () =>
-	detailSection.innerHTML = `
-    <div id="detail" class="detail-content"></div>
-    <div class="quotes-list">
-      <h2>Quotes</h2>
-      <div id="quoteList">
-      </div>
-    </div>
-    <form id="quote-form" class="quote-form" novalidate>
-      <div class="quote-input">
-        <label for="quote">Quote of this show</label>
-        <input required id="quote" placeholder="Add your quote" class="input primary" type="text">
-      </div>
-      <button type="submit" class="button primary">Add quote</button>
-    </form>
-  `;
-export const hideQuotesForm = () =>
-	detailSection.innerHTML = '';
+// const navbarVariable = toggle(navbar);
 
-export const toggle = elemento => (removeClass, addClass) => {
-	elemento.classList.remove(removeClass);
-	elemento.classList.add(addClass);
+// searchIcon.addEventListener('click', () =>
+// 	navbarVariable('no-search', 'search'));
+
+// closeIcon.addEventListener('click', () =>
+// 	navbarVariable('search', 'no-search'));
+
+// const openHeader = id => evt => {
+// 	console.log(evt);
+// 	evt.preventDefault();
+// 	const elemento = document.getElementById(id);
+// 	elemento.classList.toggle('close');
+// };
+
+const displayElement = selector => display => {
+	const element = document.querySelector(selector);
+	element.style.display = display;
 };
 
-export const toggleClass = (elemento, toggleClass) => {
-	elemento.classList.toggle(toggleClass);
-};
+const handleFilter = toggle(navbar);
 
-export const renderLoader = toggle(loader);
+const handleForm = displayElement('#detailSection');
+
+const main = document.querySelector('main');
+
+const handleMainContainer = toggle(main);
+
+const loader = document.getElementById('loader');
+
+const renderLoader = toggle(loader);
+
+export {
+	// openHeader,
+	handleFilter,
+	handleForm,
+	renderLoader,
+	handleMainContainer,
+};

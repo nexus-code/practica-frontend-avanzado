@@ -6,7 +6,6 @@ const { setItem, getItem } = storage('cookieStorage');
 const searchButton  = document.querySelector('#searchButton');
 const resetButton   = document.querySelector('#resetButton');
 const searchInput   = document.querySelector('#searchInput');
-const menuMostValued = document.querySelector('#menuMostValued');
 
 searchInput.value = getItem('search');
 
@@ -28,10 +27,4 @@ resetButton.addEventListener('click', (evt) => {
   searchInput.value = '';
   setItem('search', searchInput.value);
   renderBeersDOM();
-});
-
-menuMostValued.addEventListener('click', (evt) => {
-
-  evt.preventDefault();
-  renderBeersDOM('mostValued');
 });
