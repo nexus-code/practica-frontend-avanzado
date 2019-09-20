@@ -10,28 +10,30 @@ const API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1
 async function getAPI_KEY() {
 
 	// Change for email request ui:
-	setItem('apiUser', 'ma.cardenas@nexuscode.com');
+	// setItem('apiUser', 'ma.cardenas@nexuscode.com');
+	// setItem('apiUser', 'pepe@nexuscode.com');
 
 	// look into local storage
 	const apiKey = getItem('apiKey');
-	if (apiKey !=''){
-		console.log('find on local Storage!', apiKey);
+	if (apiKey !='')
 		return apiKey;
-	}
 
+	// else fetch to API
 	try {
 		
-		const login = await fetch(`https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1/user/login`, {
+		const login = await fetch(`${API_URL}user/login`, {
 			'method': 'POST',
 			'body': JSON.stringify({email: getItem('apiUser')}),
 			'headers': {'Content-Type': 'application/json'}
 		});
 		
 		if (!login.ok) {
-			throw new Error('Error fetching login');
+			setItem('apiKey', '');
+			return '';
 		}
+
 		const loginData = await login.json();
-		setItem('apiKey', loginData.user.apiKey);
+		setItem('apiKey', loginData.user.apiKey); // view API details
 		return loginData.user.apiKey;
 
 	} catch (e) {
@@ -49,12 +51,15 @@ const api = () => {
 		getBeers: async text => {
 			try {
 				const requestUrl = text ? `${searchAPIEndpoint}${text}` : beersAPIEndpoint;
+				const apiKey = await getAPI_KEY();
+				if (apiKey == '')
+					throw new Error('403 Error login');
 
 				const response = await fetch(requestUrl, {
 					'method': 'GET',
 					'headers': {
 						'user': getItem('apiUser'),
-						'X-API-KEY': await getAPI_KEY()
+						'X-API-KEY': getItem('apiKey')
 					}
 				});
 				if (!response.ok) {
@@ -77,11 +82,15 @@ const api = () => {
 		},
 		getBeerDetail: async id => {
 			try {
+				const apiKey = await getAPI_KEY();
+				if (apiKey == '')
+					throw new Error('403 Error login');
+
 				const response = await fetch(`${beersAPIEndpoint}/${id}`, {
 					'method': 'GET',
 					'headers': {
 						'user': getItem('apiUser'),
-						'X-API-KEY': await getAPI_KEY()
+						'X-API-KEY': getItem('apiKey')
 					}
 				});
 				if (!response.ok) {
@@ -100,7 +109,7 @@ const api = () => {
 					'method': 'POST',
 					'headers': {
 						'user': getItem('apiUser'),
-						'X-API-KEY': await getAPI_KEY()
+						'X-API-KEY': getItem('apiKey')
 					}
 				});
 				if (!response.ok) {
@@ -124,7 +133,7 @@ const api = () => {
 					headers: {
 						'Content-type': 'application/json',
 						'user': getItem('apiUser'),
-						'X-API-KEY': await getAPI_KEY()
+						'X-API-KEY': getItem('apiKey')
 					},
 				});
 				if (!response.ok) {

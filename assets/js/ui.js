@@ -23,6 +23,9 @@ const loader = document.getElementById('loader');
 export const renderLoader = toggle(loader)
 
 
+
+
+/************************************************************************************************************************* */
 // generic ui functions
 
 window.addEventListener('scroll', function () {

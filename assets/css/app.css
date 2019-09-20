@@ -292,6 +292,39 @@ footer p:last-child {
 
 /*  */
 
+.login-input {
+  width: 70%;
+  margin: 120px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+}
+
+.login-input label {
+  font-weight: bold;
+}
+
+.login-input .input {
+  width: 400px;
+  margin: 5px 0;
+  height: 32px;
+  padding: 4px 6px;
+}
+
+@media (max-width: 600px) {
+
+  .login-input {
+    margin: 100px auto;
+    width: 80%;
+  }
+
+  .login-input .input {
+    width: 300px;
+  }
+}
+
+
+/* */
 /* prevent blue border on focus 
 input:focus,
 button:focus {

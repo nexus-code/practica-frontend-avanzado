@@ -58,7 +58,7 @@ const detailTemplate = ({ beerId, name, brewersTips, description, image, firstBr
 				<h2>Comments</h2>
 				<div class="comment-list" id="commentsList">${commentsList}</div>
 				<div class="comment-input">
-					<form id="comment-form" class="comment-form" novalidate>
+					<form id="comment-form" class="comment-form">
 						<label for="commentInput">Comment this beer:</label>
 						<input id="commentInput" placeholder="Add your comment" type="text" required class="input">
 						<button id="submitComent" type="submit" class="button primary">Add</button>
@@ -126,10 +126,8 @@ export const renderDetail = async id => {
 			evt.preventDefault();
 
 			const commentInput = document.getElementById('commentInput');
-			// const comment = await createComment(id, commentInput.value);
 			await createComment(id, commentInput.value);
 			commentInput.value = '';
-			// const aux = updateDetailView(id);
 			updateDetailView(id);
 		}
 	});

@@ -100,7 +100,6 @@ function mostValued(beers) {
 function latests(beers) {
 
 	return beers.sort(function (a, b) { return parseInt(b.firstBrewed.split('/')[1]) - parseInt(a.firstBrewed.split('/')[1]); });
-	return beers.sort(function (a, b) { return parseInt(b.firstBrewed.split('/')[1]) - parseInt(a.firstBrewed.split('/')[1]); });
 }
 
 export const renderBeersDOM = async query => {
