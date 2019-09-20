@@ -4,20 +4,27 @@
 ## PURPOSE
 5th practice for 7 Bootcamp KeepCoding. Web app to list beers from an API
 
-## INTRO
-The solution consists of the API detailed below, and a small view with simple filtering methods example
+## EXERCICE REQUIRIMENTS
+* View _doc/practica-enunciado.pdf
 
-## REQUIREMENTS
+## SOLUTION REQUIREMENTS
 * Install express, ESLint & husky
-# Dev notes
-* The app takes advantage of part of the code learned and generated in class to develop the requirements of the practice and face new challenges.
+
+# Comments
+* The app takes advantage of part of the code learned and generated in class, to develop the requirements of the practice and face new challenges.
+* To access beers list must enter a valid email, the app consult the API and return this.
+* Objectives implemented:
+- Responsive.
+- Get list beers and detail from API.
+- Filter list via API and local filters: text and date.
+- Add likes and comments (and refresh local counters in background).
+- Responsive header image.
+- Login via email.
 
 # DEVELOPMENT
 #modules
 
 
 ## IMAGES CREDITS
-Image by <a href="https://pixabay.com/users/Free-Photos-242387/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=839865">Free-Photos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=839865">Pixabay</a>
-Image by <a href="https://pixabay.com/users/aiacPL-15853/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=199650">AIAC Interactive Agency</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=199650">Pixabay</a>
+Image by https://pixabay.com/
 
-* ??

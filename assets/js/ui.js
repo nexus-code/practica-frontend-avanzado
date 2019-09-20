@@ -11,18 +11,11 @@ const displayElement = selector => display => {
 	element.style.display = display;
 };
 
-
-const handleForm = displayElement('#detailSection');
-
 const main = document.querySelector('main');
-
 export const handleMainContainer = toggle(main);
 
 const loader = document.getElementById('loader');
-
 export const renderLoader = toggle(loader)
-
-
 
 
 /************************************************************************************************************************* */
