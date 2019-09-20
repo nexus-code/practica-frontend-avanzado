@@ -25,7 +25,7 @@ main.home-page {
 
 @media (min-width: 992px) {
   .beer-section {
-    margin: 20px 0 40px;
+    margin: 60px 0 40px;
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));

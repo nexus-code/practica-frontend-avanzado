@@ -1,3 +1,5 @@
+import './navbar.js';
+
 const toggle = elemento =>
 	(removeClass, addClass) => {
 		elemento.classList.remove(removeClass);

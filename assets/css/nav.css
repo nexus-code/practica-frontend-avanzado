@@ -65,6 +65,7 @@
   font-size: 14px;
   border: 0px;
   border-bottom: 1px solid var(--highlight-color);
+  height: 20px;
 }
 
 .navbar-item input[type=text]:focus {
@@ -108,7 +109,8 @@
     float: none;
     display: block;
     text-align: left;
-    width: 100%;
+    /* width: 100%; */
+    width: 150px;
     margin: 0;
     padding: 14px;
   }

@@ -280,6 +280,18 @@ footer p:last-child {
   }
 }
 
+.blink_me {
+  animation: blinker 1s linear 3;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+/*  */
+
 /* prevent blue border on focus 
 input:focus,
 button:focus {

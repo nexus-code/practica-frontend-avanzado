@@ -1,6 +1,6 @@
 'uses strict';
 
-import './navbar.js';
+// import './navbar.js';
 import { renderBeersDOM } from './beers.js';
 import { renderDetail } from './detail.js';
 import { renderLoader } from './ui.js';

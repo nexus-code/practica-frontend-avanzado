@@ -117,8 +117,8 @@ export const renderDetail = async id => {
 	mainDiv.addEventListener('click', async (evt) => {
 		
 		if (evt.target.id == 'submitLike') {
-			const likeAdded = await addLike(id);
-			const aux = updateDetailView(id);
+			await addLike(id);
+			updateDetailView(id);
 		}
 
 		if (evt.target.id == 'submitComent') {
@@ -126,10 +126,11 @@ export const renderDetail = async id => {
 			evt.preventDefault();
 
 			const commentInput = document.getElementById('commentInput');
-			console.log('commentInput', commentInput.value);
-			const comment = await createComment(id, commentInput.value);
+			// const comment = await createComment(id, commentInput.value);
+			await createComment(id, commentInput.value);
 			commentInput.value = '';
-			const aux = updateDetailView(id);
+			// const aux = updateDetailView(id);
+			updateDetailView(id);
 		}
 	});
 };
