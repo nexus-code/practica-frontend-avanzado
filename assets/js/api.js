@@ -1,23 +1,5 @@
 'use strict';
 
-// 1
-// const myCredentials = () => async value => {
-	
-// 	const response = await fetch('assets/credentials/response_1568688711912.json');
-// 	if (!response.ok) {
-// 		throw new Error('Error fetching credentials');
-// 	}
-// 	const quotes = await response.json();
-// 	console.log('quotes', quotes);
-// 	console.log('user', quotes.user);
-// 	console.log('user.email', quotes.user.email);
-// 	console.log('user.apiKey', quotes.user.apiKey);
-// 	return quotes;
-// }
-
-// const test = myCredentials();
-// test();
-
 const API_USER = 'ma.cardenas@nexuscode.com';
 const API_KEY = '5B1BJZQ-5QYMSJG-NHK8Z2D-S8YJHDB';
 
