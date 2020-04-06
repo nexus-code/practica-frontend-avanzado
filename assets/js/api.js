@@ -9,10 +9,6 @@ const API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1
 // search API_KEY on localStorage and API if not exist
 async function getAPI_KEY() {
 
-	// Change for email request ui:
-	// setItem('apiUser', 'ma.cardenas@nexuscode.com');
-	// setItem('apiUser', 'pepe@nexuscode.com');
-
 	// look into local storage
 	const apiKey = getItem('apiKey');
 	if (apiKey !='')
